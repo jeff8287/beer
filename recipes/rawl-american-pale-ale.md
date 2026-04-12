@@ -66,6 +66,23 @@ process:
 cost:
   total_krw:
   breakdown: []
+gravity_readings:
+  - day: 0
+    date: 03-29
+    sg: 1.056
+    note: 양조일
+  - day: 5
+    date: 04-03
+    sg: 1.009
+  - day: 7
+    date: 04-05
+    sg: 1.005
+  - day: 14
+    date: 04-12
+    sg: 1.000
+    note: 병입일
+tasting_notes: ""
+brew_notes: "재료 구매: [드림프 스마트스토어](https://smartstore.naver.com/dreamp/products/6224655843)"
 photos:
   - rawl-american-pale-ale/brew-day-01.png
   - rawl-american-pale-ale/brew-day-02.png

@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { calcABV, calcIBU, calcSRM, calcAttenuation, calcBUGU, calcPreBoilGravity, calcCalories, calcCarbs, srmToColor } from '../utils/calc';
 
@@ -12,7 +12,6 @@ export async function getStaticPaths() {
 }
 
 const { recipe } = Astro.props;
-const { Content } = await render(recipe);
 const d = recipe.data;
 const base = import.meta.env.BASE_URL;
 
@@ -166,9 +165,38 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
       </section>
     )}
 
-    <section class="content">
-      <Content />
-    </section>
+    {d.gravity_readings && d.gravity_readings.length > 0 && (
+      <section>
+        <h2>Gravity Readings</h2>
+        <table>
+          <thead><tr><th>Day</th><th>Date</th><th>SG</th><th></th></tr></thead>
+          <tbody>
+            {d.gravity_readings.map((r: { day: number; date: string; sg: number; note?: string }) => (
+              <tr>
+                <td>{r.day === 0 ? '0' : `+${r.day}`}</td>
+                <td>{r.date}</td>
+                <td>{r.sg}</td>
+                <td class="note">{r.note ?? ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    )}
+
+    {d.tasting_notes && (
+      <section>
+        <h2>Tasting Notes</h2>
+        <p>{d.tasting_notes}</p>
+      </section>
+    )}
+
+    {d.brew_notes && (
+      <section>
+        <h2>Brew Notes</h2>
+        <p set:html={d.brew_notes.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')} />
+      </section>
+    )}
   </article>
 </Base>
 
