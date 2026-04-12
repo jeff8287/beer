@@ -23,7 +23,7 @@ const statusColors: Record<string, string> = {
 };
 ---
 
-<a href={`${base}beer/${slug}/`} class="card">
+<a href={`${base}${slug}/`} class="card">
   {photo ? (
     <img src={`${base}photos/${photo}`} alt={name} class="card-img" />
   ) : (

@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://jeff8287.github.io',
-  base: '/beer',
+  base: '/beer/',
   output: 'static',
   vite: {
     server: {

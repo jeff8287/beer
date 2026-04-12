@@ -1,0 +1,274 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { calcABV, calcIBU, calcSRM, calcAttenuation, calcBUGU, calcPreBoilGravity, calcCalories, calcCarbs, srmToColor } from '../utils/calc';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes');
+  return recipes.map((recipe) => ({
+    params: { slug: recipe.id },
+    props: { recipe },
+  }));
+}
+
+const { recipe } = Astro.props;
+const { Content } = await render(recipe);
+const d = recipe.data;
+const base = import.meta.env.BASE_URL;
+
+const abv = d.abv ?? calcABV(d.og, d.fg);
+const ibu = d.ibu ?? calcIBU(d.ingredients.hops, d.og, d.batch_size_liters);
+const srm = d.srm ?? calcSRM(d.ingredients.malts, d.batch_size_liters);
+const attenuation = calcAttenuation(d.og, d.fg);
+const bugu = calcBUGU(ibu, d.og);
+const preBoilGravity = d.process ? calcPreBoilGravity(d.og, d.batch_size_liters, d.process.preboil_volume_liters) : null;
+const calories = calcCalories(d.og, d.fg);
+const carbs = calcCarbs(d.og, d.fg);
+const srmColor = srm != null ? srmToColor(srm) : null;
+
+const buguLabel = bugu != null
+  ? bugu < 0.5 ? 'Malty' : bugu > 0.8 ? 'Hoppy' : 'Balanced'
+  : null;
+
+const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: number }) => sum + m.weight_kg, 0);
+---
+
+<Base title={d.name}>
+  <article>
+    <a href={base} class="back">&larr; 목록으로</a>
+
+    <header>
+      <h1>{d.name}</h1>
+      <p class="meta">
+        <span class="badge">{d.status}</span>
+        <span>{d.style}</span>
+        <span>{d.batch_size_liters}L</span>
+      </p>
+    </header>
+
+    {d.photos && d.photos.length > 0 && (
+      <section class="photos">
+        {d.photos.map((photo: string) => (
+          <img src={`${base}photos/${photo}`} alt={d.name} />
+        ))}
+      </section>
+    )}
+
+    <section class="stats">
+      <h2>Stats</h2>
+      <div class="stat-grid">
+        {d.og && <div><strong>OG</strong><span>{d.og}</span></div>}
+        {d.fg && <div><strong>FG</strong><span>{d.fg}</span></div>}
+        {abv != null && <div><strong>ABV</strong><span>{abv}%</span></div>}
+        {ibu != null && <div><strong>IBU</strong><span>{ibu}</span></div>}
+        {srm != null && (
+          <div>
+            <strong>SRM</strong>
+            <span class="srm-value">
+              {srm}
+              <span class="srm-swatch" style={`background:${srmColor}`} />
+            </span>
+          </div>
+        )}
+      </div>
+
+      <div class="stat-details">
+        {attenuation != null && <span>Attenuation: {attenuation}%</span>}
+        {bugu != null && <span>BU:GU {bugu} ({buguLabel})</span>}
+        {preBoilGravity != null && <span>Pre-boil SG: {preBoilGravity}</span>}
+        {calories != null && <span>{calories} kcal / 12oz</span>}
+        {carbs != null && <span>{carbs}g carbs / 12oz</span>}
+      </div>
+
+      {d.brew_date && <p><strong>양조일:</strong> {d.brew_date}</p>}
+      {d.bottle_date && <p><strong>병입일:</strong> {d.bottle_date}</p>}
+      {d.fermentation && (
+        <p>
+          <strong>발효:</strong>
+          {d.fermentation.temp_celsius && ` ${d.fermentation.temp_celsius}°C`}
+          {d.fermentation.duration_days && ` / ${d.fermentation.duration_days}일`}
+        </p>
+      )}
+    </section>
+
+    <section class="ingredients">
+      <h2>Ingredients</h2>
+
+      <h3>Malts ({totalGrainKg.toFixed(2)} kg)</h3>
+      <table>
+        <thead><tr><th>Name</th><th>Weight</th><th>%</th></tr></thead>
+        <tbody>
+          {d.ingredients.malts.map((m: { name: string; weight_kg: number }) => (
+            <tr>
+              <td>{m.name}</td>
+              <td>{m.weight_kg} kg</td>
+              <td>{Math.round(m.weight_kg / totalGrainKg * 100)}%</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h3>Hops</h3>
+      <table>
+        <thead><tr><th>Name</th><th>Weight</th><th>Time</th><th>Use</th><th>AA%</th></tr></thead>
+        <tbody>
+          {d.ingredients.hops.map((h: { name: string; weight_g: number; time_min: number; use: string; alpha_acid_pct?: number }) => (
+            <tr>
+              <td>{h.name}</td>
+              <td>{h.weight_g}g</td>
+              <td>{h.use === 'dryhop' ? `${h.time_min}d` : `${h.time_min}min`}</td>
+              <td>{h.use}</td>
+              <td>{h.alpha_acid_pct ?? '-'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h3>Yeast</h3>
+      <p>{d.ingredients.yeast.name} — {d.ingredients.yeast.amount}</p>
+    </section>
+
+    {d.process && (
+      <section class="process">
+        <h2>Process</h2>
+        <dl>
+          {d.process.mash_temp_celsius && (
+            <><dt>Mash</dt><dd>{d.process.mash_temp_celsius}°C / {d.process.mash_duration_min}min</dd></>
+          )}
+          {d.process.strike_water_liters && (
+            <><dt>Strike Water</dt><dd>{d.process.strike_water_liters}L @ {d.process.strike_water_temp_celsius}°C</dd></>
+          )}
+          {d.process.sparge_water_liters && (
+            <><dt>Sparge Water</dt><dd>{d.process.sparge_water_liters}L @ {d.process.sparge_water_temp_celsius}°C</dd></>
+          )}
+          {d.process.preboil_volume_liters && (
+            <><dt>Pre-boil Volume</dt><dd>{d.process.preboil_volume_liters}L</dd></>
+          )}
+          <dt>Boil</dt><dd>{d.process.boil_duration_min}min</dd>
+        </dl>
+      </section>
+    )}
+
+    {d.cost && d.cost.total_krw && (
+      <section class="cost">
+        <h2>Cost</h2>
+        <p><strong>Total:</strong> {d.cost.total_krw.toLocaleString()}원</p>
+        {d.cost.breakdown.length > 0 && (
+          <table>
+            <thead><tr><th>Item</th><th>Cost</th></tr></thead>
+            <tbody>
+              {d.cost.breakdown.map((b: { item: string; cost_krw: number }) => (
+                <tr><td>{b.item}</td><td>{b.cost_krw.toLocaleString()}원</td></tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </section>
+    )}
+
+    <section class="content">
+      <Content />
+    </section>
+  </article>
+</Base>
+
+<style>
+  article { max-width: 800px; }
+  .back {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  h1 { font-size: 2rem; color: #8b4513; margin-bottom: 0.25rem; }
+  .meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  .badge {
+    background: #27ae60;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .photos {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .photos img {
+    max-width: 400px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  section { margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem;
+    color: #8b4513;
+    border-bottom: 1px solid #e0d5c7;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.75rem;
+  }
+  h3 { font-size: 1rem; margin: 0.75rem 0 0.5rem; color: #555; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.75rem;
+  }
+  th, td {
+    padding: 0.4rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  th { font-weight: 600; color: #666; font-size: 0.85rem; }
+  .stat-grid {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .stat-grid div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat-grid strong { font-size: 0.8rem; color: #888; }
+  .stat-grid span { font-size: 1.2rem; font-weight: 600; }
+  .srm-value { display: flex; align-items: center; gap: 0.4rem; }
+  .srm-swatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.15);
+  }
+  .stat-details {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid #f0ebe3;
+  }
+  dl { display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1rem; }
+  dt { font-weight: 600; color: #666; }
+  .content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .content :global(th),
+  .content :global(td) {
+    padding: 0.4rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+</style>
