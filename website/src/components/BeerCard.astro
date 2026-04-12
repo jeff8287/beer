@@ -1,0 +1,108 @@
+---
+interface Props {
+  name: string;
+  style: string;
+  slug: string;
+  brewDate: string;
+  og: number | null;
+  fg: number | null;
+  abv: number | null;
+  status: string;
+  photo?: string;
+}
+
+const { name, style, slug, brewDate, og, fg, abv, status, photo } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const statusColors: Record<string, string> = {
+  planned: '#6c757d',
+  fermenting: '#e67e22',
+  conditioning: '#f39c12',
+  ready: '#27ae60',
+  archived: '#95a5a6',
+};
+---
+
+<a href={`${base}beer/${slug}/`} class="card">
+  {photo ? (
+    <img src={`${base}photos/${photo}`} alt={name} class="card-img" />
+  ) : (
+    <div class="card-img placeholder">🍺</div>
+  )}
+  <div class="card-body">
+    <span class="badge" style={`background:${statusColors[status] || '#6c757d'}`}>
+      {status}
+    </span>
+    <h2>{name}</h2>
+    <p class="style">{style}</p>
+    <div class="stats">
+      {og && <span>OG {og}</span>}
+      {fg && <span>FG {fg}</span>}
+      {abv && <span>{abv}% ABV</span>}
+    </div>
+    {brewDate && <p class="date">{brewDate}</p>}
+  </div>
+</a>
+
+<style>
+  .card {
+    display: block;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0ebe3;
+    font-size: 3rem;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0.25rem;
+    color: #1a1a1a;
+  }
+  .style {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  .stats {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #888;
+  }
+  .date {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+</style>

@@ -1,0 +1,14 @@
+# Private content
+notes/
+
+# Astro / Node
+node_modules/
+website/dist/
+website/.astro/
+website/.env*
+
+# OS
+.DS_Store
+
+# OMC state
+.omc/

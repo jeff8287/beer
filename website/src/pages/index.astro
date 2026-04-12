@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import BeerCard from '../components/BeerCard.astro';
+import { calcABV } from '../utils/calc';
+
+const recipes = await getCollection('recipes');
+const sorted = recipes.sort((a, b) => {
+  if (!a.data.brew_date) return 1;
+  if (!b.data.brew_date) return -1;
+  return b.data.brew_date.localeCompare(a.data.brew_date);
+});
+---
+
+<Base title="Homebrew Beer Log">
+  <h1>Homebrew Beer Log</h1>
+  <p class="subtitle">맥주 자가양조 기록</p>
+
+  <div class="grid">
+    {sorted.map((recipe) => (
+      <BeerCard
+        name={recipe.data.name}
+        style={recipe.data.style}
+        slug={recipe.id}
+        brewDate={recipe.data.brew_date}
+        og={recipe.data.og}
+        fg={recipe.data.fg}
+        abv={recipe.data.abv ?? calcABV(recipe.data.og, recipe.data.fg)}
+        status={recipe.data.status}
+        photo={recipe.data.photos?.[0]}
+      />
+    ))}
+  </div>
+
+  {sorted.length === 0 && (
+    <p class="empty">아직 등록된 레시피가 없습니다.</p>
+  )}
+</Base>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    color: #8b4513;
+  }
+  .subtitle {
+    color: #888;
+    margin-bottom: 2rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .empty {
+    text-align: center;
+    color: #999;
+    padding: 3rem;
+  }
+</style>
