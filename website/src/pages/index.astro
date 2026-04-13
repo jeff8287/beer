@@ -28,7 +28,9 @@ const sorted = recipes.sort((a, b) => {
         abv={recipe.data.abv ?? calcABV(recipe.data.og, recipe.data.fg)}
         status={recipe.data.status}
         photo={recipe.data.photos?.[0]}
+        photoPosition={recipe.data.card_photo_position}
         collaborators={recipe.data.collaborators ?? []}
+        collaboratorGroup={recipe.data.collaborator_group}
       />
     ))}
   </div>

@@ -71,7 +71,14 @@ process:
   sparge_water_temp_celsius: 80
   boil_duration_min: 120
   preboil_volume_liters:
+collaborator_group: 맥아스터디
+card_photo_position: top
 collaborators:
+  - handle: seung_u_park
+  - handle: yirnva.kwon
+  - handle: negroni.daiquiri
+  - handle: 남궁한
+  - handle: geng_tai
   - handle: peterpan-brewing
     url: https://github.com/peterpan-brewing/brewing
 cost:

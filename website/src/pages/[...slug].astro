@@ -34,10 +34,10 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
         <span>{d.style}</span>
         <span>{d.batch_size_liters}L</span>
       </p>
-      {d.collaborators && d.collaborators.length > 0 && (
+      {(d.collaborator_group || (d.collaborators && d.collaborators.length > 0)) && (
         <div class="collab-section">
-          <span class="collab-badge">Collaborate w/</span>
-          {d.collaborators.map((c: { handle: string; url?: string }) =>
+          <span class="collab-badge">Collaborate w/{d.collaborator_group ? ` ${d.collaborator_group}` : ''}</span>
+          {d.collaborators && d.collaborators.map((c: { handle: string; url?: string }) =>
             c.url
               ? <a href={c.url} target="_blank" class="collab-tag">@{c.handle}</a>
               : <span class="collab-tag">@{c.handle}</span>

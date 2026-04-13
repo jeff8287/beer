@@ -57,6 +57,8 @@ const recipes = defineCollection({
       handle: z.string(),
       url: z.string().optional(),
     })).optional().default([]),
+    collaborator_group: z.string().optional(),
+    card_photo_position: z.string().optional(),
     photos: z.array(z.string()).optional().default([]),
     tags: z.array(z.string()),
   }),

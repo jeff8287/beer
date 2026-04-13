@@ -9,10 +9,15 @@ interface Props {
   abv: number | null;
   status: string;
   photo?: string;
+  photoPosition?: string;
   collaborators?: { handle: string; url?: string }[];
+  collaboratorGroup?: string;
 }
 
-const { name, style, slug, brewDate, og, fg, abv, status, photo, collaborators = [] } = Astro.props;
+const { name, style, slug, brewDate, og, fg, abv, status, photo, photoPosition, collaborators = [], collaboratorGroup } = Astro.props;
+const objectPosition = photoPosition === 'top' ? 'center top'
+  : photoPosition === 'bottom' ? 'center bottom'
+  : photoPosition ?? 'center';
 const base = import.meta.env.BASE_URL;
 
 const statusColors: Record<string, string> = {
@@ -26,7 +31,7 @@ const statusColors: Record<string, string> = {
 
 <a href={`${base}${slug}/`} class="card">
   {photo ? (
-    <img src={`${base}photos/${photo}`} alt={name} class="card-img" />
+    <img src={`${base}photos/${photo}`} alt={name} class="card-img" style={`object-position: ${objectPosition}`} />
   ) : (
     <div class="card-img placeholder">🍺</div>
   )}
@@ -35,8 +40,8 @@ const statusColors: Record<string, string> = {
       <span class="badge" style={`background:${statusColors[status] || '#6c757d'}`}>
         {status}
       </span>
-      {collaborators.length > 0 && (
-        <span class="collab-badge">Collaborate w/ {collaborators.length}</span>
+      {(collaboratorGroup || collaborators.length > 0) && (
+        <span class="collab-badge">Collaborate w/ {collaboratorGroup ?? collaborators.length}</span>
       )}
     </div>
     <h2>{name}</h2>
