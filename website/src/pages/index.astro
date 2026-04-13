@@ -12,9 +12,9 @@ const sorted = recipes.sort((a, b) => {
 });
 ---
 
-<Base title="Homebrew Beer Log">
-  <h1>Homebrew Beer Log</h1>
-  <p class="subtitle">맥주 자가양조 기록</p>
+<Base title="Brew Log">
+  <h1>BPD Project</h1>
+  <p class="subtitle">Homebrew Brewing Log</p>
 
   <div class="grid">
     {sorted.map((recipe) => (
@@ -28,12 +28,13 @@ const sorted = recipes.sort((a, b) => {
         abv={recipe.data.abv ?? calcABV(recipe.data.og, recipe.data.fg)}
         status={recipe.data.status}
         photo={recipe.data.photos?.[0]}
+        collaborators={recipe.data.collaborators ?? []}
       />
     ))}
   </div>
 
   {sorted.length === 0 && (
-    <p class="empty">아직 등록된 레시피가 없습니다.</p>
+    <p class="empty">No recipes yet.</p>
   )}
 </Base>
 

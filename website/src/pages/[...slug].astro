@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { calcABV, calcIBU, calcSRM, calcAttenuation, calcBUGU, calcPreBoilGravity, calcCalories, calcCarbs, srmToColor } from '../utils/calc';
+import { calcABV, calcIBU, calcSRM, srmToColor } from '../utils/calc';
 
 export async function getStaticPaths() {
   const recipes = await getCollection('recipes');
@@ -18,31 +18,32 @@ const base = import.meta.env.BASE_URL;
 const abv = d.abv ?? calcABV(d.og, d.fg);
 const ibu = d.ibu ?? calcIBU(d.ingredients.hops, d.og, d.batch_size_liters);
 const srm = d.srm ?? calcSRM(d.ingredients.malts, d.batch_size_liters);
-const attenuation = calcAttenuation(d.og, d.fg);
-const bugu = calcBUGU(ibu, d.og);
-const preBoilGravity = d.process ? calcPreBoilGravity(d.og, d.batch_size_liters, d.process.preboil_volume_liters) : null;
-const calories = calcCalories(d.og, d.fg);
-const carbs = calcCarbs(d.og, d.fg);
 const srmColor = srm != null ? srmToColor(srm) : null;
-
-const buguLabel = bugu != null
-  ? bugu < 0.5 ? 'Malty' : bugu > 0.8 ? 'Hoppy' : 'Balanced'
-  : null;
 
 const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: number }) => sum + m.weight_kg, 0);
 ---
 
 <Base title={d.name}>
   <article>
-    <a href={base} class="back">&larr; 목록으로</a>
+    <a href={base} class="back">&larr; Back to list</a>
 
     <header>
       <h1>{d.name}</h1>
       <p class="meta">
-        <span class="badge">{d.status}</span>
+        <span class="badge" data-status={d.status}>{d.status}</span>
         <span>{d.style}</span>
         <span>{d.batch_size_liters}L</span>
       </p>
+      {d.collaborators && d.collaborators.length > 0 && (
+        <div class="collab-section">
+          <span class="collab-badge">Collaborate w/</span>
+          {d.collaborators.map((c: { handle: string; url?: string }) =>
+            c.url
+              ? <a href={c.url} target="_blank" class="collab-tag">@{c.handle}</a>
+              : <span class="collab-tag">@{c.handle}</span>
+          )}
+        </div>
+      )}
     </header>
 
     {d.photos && d.photos.length > 0 && (
@@ -71,21 +72,13 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
         )}
       </div>
 
-      <div class="stat-details">
-        {attenuation != null && <span>Attenuation: {attenuation}%</span>}
-        {bugu != null && <span>BU:GU {bugu} ({buguLabel})</span>}
-        {preBoilGravity != null && <span>Pre-boil SG: {preBoilGravity}</span>}
-        {calories != null && <span>{calories} kcal / 12oz</span>}
-        {carbs != null && <span>{carbs}g carbs / 12oz</span>}
-      </div>
-
-      {d.brew_date && <p><strong>양조일:</strong> {d.brew_date}</p>}
-      {d.bottle_date && <p><strong>병입일:</strong> {d.bottle_date}</p>}
+      {d.brew_date && <p><strong>Brew Date:</strong> {d.brew_date}</p>}
+      {d.bottle_date && <p><strong>Bottle Date:</strong> {d.bottle_date}</p>}
       {d.fermentation && (
         <p>
-          <strong>발효:</strong>
+          <strong>Fermentation:</strong>
           {d.fermentation.temp_celsius && ` ${d.fermentation.temp_celsius}°C`}
-          {d.fermentation.duration_days && ` / ${d.fermentation.duration_days}일`}
+          {d.fermentation.duration_days && ` / ${d.fermentation.duration_days} days`}
         </p>
       )}
     </section>
@@ -151,13 +144,13 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
     {d.cost && d.cost.total_krw && (
       <section class="cost">
         <h2>Cost</h2>
-        <p><strong>Total:</strong> {d.cost.total_krw.toLocaleString()}원</p>
+        <p><strong>Total:</strong> {d.cost.total_krw.toLocaleString()} KRW</p>
         {d.cost.breakdown.length > 0 && (
           <table>
             <thead><tr><th>Item</th><th>Cost</th></tr></thead>
             <tbody>
               {d.cost.breakdown.map((b: { item: string; cost_krw: number }) => (
-                <tr><td>{b.item}</td><td>{b.cost_krw.toLocaleString()}원</td></tr>
+                <tr><td>{b.item}</td><td>{b.cost_krw.toLocaleString()} KRW</td></tr>
               ))}
             </tbody>
           </table>
@@ -213,10 +206,9 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
     gap: 1rem;
     align-items: center;
     color: #666;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
   }
   .badge {
-    background: #27ae60;
     color: white;
     padding: 0.2rem 0.6rem;
     border-radius: 999px;
@@ -224,6 +216,36 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
     font-weight: 600;
     text-transform: uppercase;
   }
+  .badge[data-status="planned"] { background: #6c757d; }
+  .badge[data-status="fermenting"] { background: #e67e22; }
+  .badge[data-status="conditioning"] { background: #f39c12; }
+  .badge[data-status="ready"] { background: #27ae60; }
+  .badge[data-status="archived"] { background: #95a5a6; }
+  .collab-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .collab-badge {
+    background: #3498db;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .collab-tag {
+    background: #eaf2fb;
+    color: #2980b9;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .collab-tag:hover { background: #d4e6f7; }
   .photos {
     display: flex;
     gap: 1rem;
@@ -277,26 +299,7 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
     border-radius: 50%;
     border: 1px solid rgba(0,0,0,0.15);
   }
-  .stat-details {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 0.75rem;
-    padding: 0.5rem 0;
-    border-top: 1px solid #f0ebe3;
-  }
   dl { display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1rem; }
   dt { font-weight: 600; color: #666; }
-  .content :global(table) {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .content :global(th),
-  .content :global(td) {
-    padding: 0.4rem 0.75rem;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-  }
+  .note { font-size: 0.8rem; color: #999; }
 </style>

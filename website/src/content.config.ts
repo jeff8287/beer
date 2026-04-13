@@ -53,6 +53,10 @@ const recipes = defineCollection({
     })).optional().default([]),
     tasting_notes: z.string().optional().default(''),
     brew_notes: z.string().optional().default(''),
+    collaborators: z.array(z.object({
+      handle: z.string(),
+      url: z.string().optional(),
+    })).optional().default([]),
     photos: z.array(z.string()).optional().default([]),
     tags: z.array(z.string()),
   }),

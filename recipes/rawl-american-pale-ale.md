@@ -63,6 +63,13 @@ process:
   sparge_water_temp_celsius: 85
   boil_duration_min: 60
   preboil_volume_liters: 29
+collaborators:
+  - handle: __tirro
+    url: https://yeunjunlee.notion.site/RAWR-Pale-Ale-33bf182b5644807abf29fcc9707acc09
+  - handle: malegorani
+  - handle: 1_ghost__
+  - handle: geng_tai
+    url: https://github.com/jeff8287/beer
 cost:
   total_krw:
   breakdown: []
@@ -163,3 +170,13 @@ Safale US-05 — 11.5g 1팩
 ## Brew Notes
 
 재료 구매: [드림프 스마트스토어](https://smartstore.naver.com/dreamp/products/6224655843)
+
+## 정산
+
+| 항목 | 금액 |
+|------|------|
+| 재료 (몰트, 홉, 효모 등) | |
+| 공방 대여비 | |
+| 병 | |
+| 기타 | |
+| **합계** | **원** |

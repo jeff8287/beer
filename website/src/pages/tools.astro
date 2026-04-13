@@ -2,45 +2,45 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="양조 계산기" description="자가양조에 필요한 계산기 모음">
-  <h1>양조 계산기</h1>
+<Base title="Brew Calculators" description="Homebrew brewing calculators">
+  <h1>Brew Calculators</h1>
   <p class="subtitle">Brew Day Tools</p>
 
   <div class="calculators">
     <section class="calc-card" id="strike">
-      <h2>스트라이크 워터 온도</h2>
-      <p class="desc">곡물에 부을 물의 온도를 계산합니다.</p>
+      <h2>Strike Water Temperature</h2>
+      <p class="desc">Calculate the temperature to heat your strike water.</p>
       <div class="form">
-        <label>곡물 무게 (kg)<input type="number" id="s-grain" value="5.8" step="0.1" /></label>
-        <label>물 양 (L)<input type="number" id="s-water" value="18" step="0.1" /></label>
-        <label>목표 매시 온도 (°C)<input type="number" id="s-target" value="68" step="1" /></label>
-        <label>곡물 온도 (°C)<input type="number" id="s-graintemp" value="22" step="1" /></label>
+        <label>Grain Weight (kg)<input type="number" id="s-grain" value="5.8" step="0.1" /></label>
+        <label>Water Volume (L)<input type="number" id="s-water" value="18" step="0.1" /></label>
+        <label>Target Mash Temp (°C)<input type="number" id="s-target" value="68" step="1" /></label>
+        <label>Grain Temp (°C)<input type="number" id="s-graintemp" value="22" step="1" /></label>
       </div>
       <div class="result" id="s-result"></div>
     </section>
 
     <section class="calc-card" id="sparge">
-      <h2>스파지 워터 계산</h2>
-      <p class="desc">필요한 스파지 워터 양을 계산합니다.</p>
+      <h2>Sparge Water Volume</h2>
+      <p class="desc">Calculate the sparge water needed for your batch.</p>
       <div class="form">
-        <label>프리보일 목표 (L)<input type="number" id="sp-preboil" value="29" step="0.5" /></label>
-        <label>스트라이크 워터 (L)<input type="number" id="sp-strike" value="18" step="0.1" /></label>
-        <label>곡물 무게 (kg)<input type="number" id="sp-grain" value="5.8" step="0.1" /></label>
+        <label>Pre-boil Target (L)<input type="number" id="sp-preboil" value="29" step="0.5" /></label>
+        <label>Strike Water (L)<input type="number" id="sp-strike" value="18" step="0.1" /></label>
+        <label>Grain Weight (kg)<input type="number" id="sp-grain" value="5.8" step="0.1" /></label>
       </div>
       <div class="result" id="sp-result"></div>
     </section>
 
     <section class="calc-card" id="priming">
-      <h2>프라이밍 계산기</h2>
-      <p class="desc">병입 시 필요한 프라이밍 슈가 양을 계산합니다.</p>
+      <h2>Priming Calculator</h2>
+      <p class="desc">Calculate priming sugar needed for bottle conditioning.</p>
       <div class="form">
-        <label>목표 CO₂ (volumes)<input type="number" id="p-co2" value="2.4" step="0.1" /></label>
-        <label>맥주 온도 (°C)<input type="number" id="p-temp" value="20" step="1" /></label>
-        <label>맥주 양 (L)<input type="number" id="p-vol" value="19" step="0.5" /></label>
-        <label>설탕 종류
+        <label>Target CO₂ (volumes)<input type="number" id="p-co2" value="2.4" step="0.1" /></label>
+        <label>Beer Temp (°C)<input type="number" id="p-temp" value="20" step="1" /></label>
+        <label>Beer Volume (L)<input type="number" id="p-vol" value="19" step="0.5" /></label>
+        <label>Sugar Type
           <select id="p-type">
-            <option value="table">백설탕 (Sucrose)</option>
-            <option value="corn">콘슈가 (Dextrose)</option>
+            <option value="table">Table Sugar (Sucrose)</option>
+            <option value="corn">Corn Sugar (Dextrose)</option>
             <option value="dme">DME</option>
           </select>
         </label>
@@ -49,8 +49,8 @@ import Base from '../layouts/Base.astro';
     </section>
 
     <section class="calc-card" id="abv">
-      <h2>ABV / 칼로리 계산</h2>
-      <p class="desc">OG와 FG로 ABV, 감쇠율, 칼로리를 계산합니다.</p>
+      <h2>ABV / Calories</h2>
+      <p class="desc">Calculate ABV, attenuation, and calories from OG and FG.</p>
       <div class="form">
         <label>OG<input type="number" id="a-og" value="1.056" step="0.001" /></label>
         <label>FG<input type="number" id="a-fg" value="1.010" step="0.001" /></label>
@@ -59,12 +59,12 @@ import Base from '../layouts/Base.astro';
     </section>
 
     <section class="calc-card" id="scale">
-      <h2>레시피 스케일링</h2>
-      <p class="desc">배치 크기 변경 시 재료 비율을 조정합니다.</p>
+      <h2>Recipe Scaling</h2>
+      <p class="desc">Scale ingredient amounts for a different batch size.</p>
       <div class="form">
-        <label>원래 배치 (L)<input type="number" id="sc-from" value="20" step="0.5" /></label>
-        <label>새 배치 (L)<input type="number" id="sc-to" value="10" step="0.5" /></label>
-        <label>원래 재료 (g/kg)<input type="number" id="sc-amount" value="4.025" step="0.001" /></label>
+        <label>Original Batch (L)<input type="number" id="sc-from" value="20" step="0.5" /></label>
+        <label>New Batch (L)<input type="number" id="sc-to" value="10" step="0.5" /></label>
+        <label>Original Amount (g/kg)<input type="number" id="sc-amount" value="4.025" step="0.001" /></label>
       </div>
       <div class="result" id="sc-result"></div>
     </section>
@@ -76,27 +76,23 @@ import Base from '../layouts/Base.astro';
   function val(id: string) { return parseFloat($(id).value) || 0; }
 
   function calcAll() {
-    // 스트라이크 워터 온도
     const ratio = val('s-water') / val('s-grain');
     const strikeTemp = (0.41 / ratio) * (val('s-target') - val('s-graintemp')) + val('s-target');
-    $('s-result').innerHTML = `<strong>${strikeTemp.toFixed(1)}°C</strong>로 물을 가열하세요<br><span class="sub">물/곡물 비율: ${ratio.toFixed(2)} L/kg</span>`;
+    $('s-result').innerHTML = `Heat water to <strong>${strikeTemp.toFixed(1)}°C</strong><br><span class="sub">Water/grain ratio: ${ratio.toFixed(2)} L/kg</span>`;
 
-    // 스파지 워터
     const grainAbsorption = val('sp-grain') * 1.04;
     const firstRunnings = val('sp-strike') - grainAbsorption;
     const spargeNeeded = val('sp-preboil') - firstRunnings;
-    $('sp-result').innerHTML = `스파지 워터: <strong>${spargeNeeded.toFixed(1)}L</strong><br><span class="sub">곡물 흡수: ${grainAbsorption.toFixed(1)}L · 1차 워트: ${firstRunnings.toFixed(1)}L</span>`;
+    $('sp-result').innerHTML = `Sparge water: <strong>${spargeNeeded.toFixed(1)}L</strong><br><span class="sub">Grain absorption: ${grainAbsorption.toFixed(1)}L · First runnings: ${firstRunnings.toFixed(1)}L</span>`;
 
-    // 프라이밍
     const temp = val('p-temp');
     const residualCO2 = 3.0378 - 0.050062 * temp + 0.00026555 * temp * temp;
     const neededCO2 = Math.max(0, val('p-co2') - residualCO2);
     const factors: Record<string, number> = { table: 4.0, corn: 4.35, dme: 5.33 };
     const sugarType = ($('p-type') as HTMLSelectElement).value;
     const sugar = neededCO2 * val('p-vol') * factors[sugarType];
-    $('p-result').innerHTML = `프라이밍 슈가: <strong>${sugar.toFixed(1)}g</strong><br><span class="sub">잔존 CO₂: ${residualCO2.toFixed(2)} vols · 추가 필요: ${neededCO2.toFixed(2)} vols</span>`;
+    $('p-result').innerHTML = `Priming sugar: <strong>${sugar.toFixed(1)}g</strong><br><span class="sub">Residual CO₂: ${residualCO2.toFixed(2)} vols · Needed: ${neededCO2.toFixed(2)} vols</span>`;
 
-    // ABV / 칼로리
     const og = val('a-og');
     const fg = val('a-fg');
     const abv = (og - fg) * 131.25;
@@ -109,10 +105,9 @@ import Base from '../layouts/Base.astro';
     const carbsVal = (re - 0.1) * fg * 3.55;
     $('a-result').innerHTML = `ABV: <strong>${abv.toFixed(1)}%</strong> · Attenuation: <strong>${atten.toFixed(1)}%</strong><br><span class="sub">${Math.round(cal)} kcal · ${carbsVal.toFixed(1)}g carbs (per 12oz)</span>`;
 
-    // 스케일링
     const factor = val('sc-to') / val('sc-from');
     const scaled = val('sc-amount') * factor;
-    $('sc-result').innerHTML = `스케일링: <strong>${scaled.toFixed(3)}</strong><br><span class="sub">비율: ×${factor.toFixed(2)}</span>`;
+    $('sc-result').innerHTML = `Scaled: <strong>${scaled.toFixed(3)}</strong><br><span class="sub">Factor: ×${factor.toFixed(2)}</span>`;
   }
 
   document.querySelectorAll('input, select').forEach(el =>

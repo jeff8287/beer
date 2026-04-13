@@ -9,9 +9,10 @@ interface Props {
   abv: number | null;
   status: string;
   photo?: string;
+  collaborators?: { handle: string; url?: string }[];
 }
 
-const { name, style, slug, brewDate, og, fg, abv, status, photo } = Astro.props;
+const { name, style, slug, brewDate, og, fg, abv, status, photo, collaborators = [] } = Astro.props;
 const base = import.meta.env.BASE_URL;
 
 const statusColors: Record<string, string> = {
@@ -30,9 +31,14 @@ const statusColors: Record<string, string> = {
     <div class="card-img placeholder">🍺</div>
   )}
   <div class="card-body">
-    <span class="badge" style={`background:${statusColors[status] || '#6c757d'}`}>
-      {status}
-    </span>
+    <div class="badges">
+      <span class="badge" style={`background:${statusColors[status] || '#6c757d'}`}>
+        {status}
+      </span>
+      {collaborators.length > 0 && (
+        <span class="collab-badge">Collaborate w/ {collaborators.length}</span>
+      )}
+    </div>
     <h2>{name}</h2>
     <p class="style">{style}</p>
     <div class="stats">
@@ -74,6 +80,11 @@ const statusColors: Record<string, string> = {
   .card-body {
     padding: 1rem;
   }
+  .badges {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
   .badge {
     display: inline-block;
     padding: 0.2rem 0.6rem;
@@ -83,6 +94,15 @@ const statusColors: Record<string, string> = {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+  .collab-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: #3498db;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
   }
   h2 {
     font-size: 1.2rem;
