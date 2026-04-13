@@ -8,7 +8,9 @@
 
 | Batch | Style | ABV | Status |
 |-------|-------|-----|--------|
-| [RAWL American Pale Ale](https://jeff8287.github.io/beer/rawl-american-pale-ale/) | American Pale Ale | 7.4% | Ready |
+| [RAWR American Pale Ale](https://jeff8287.github.io/beer/rawr-american-pale-ale/) | American Pale Ale | 7.4% | Ready |
+| [Pumpkin Ale #1 — Hollow Night](https://jeff8287.github.io/beer/pumpkin-ale-hollow-night/) | Pumpkin Ale | 6.3% | Archived |
+| [Imperial Gingerbread Stout #1 — Silksong](https://jeff8287.github.io/beer/imperial-gingerbread-stout-silksong/) | Imperial Stout | 8.14% | Archived |
 
 ## Website
 
@@ -20,3 +22,4 @@
 |---|---|
 | [@__tirro](https://yeunjunlee.notion.site/RAWR-Pale-Ale-33bf182b5644807abf29fcc9707acc09) | [@malegorani](https://instagram.com/malegorani) |
 | [@1_ghost__](https://instagram.com/1_ghost__) | [@geng_tai](https://github.com/jeff8287/beer) |
+| [@peterpan-brewing](https://github.com/peterpan-brewing/brewing) | |

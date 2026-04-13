@@ -49,7 +49,7 @@ cost:
     #   cost_krw: 15000
 
 photos: []
-  # - rawl-american-pale-ale/photo1.jpg
+  # - rawr-american-pale-ale/photo1.jpg
 
 tags:
   - beer

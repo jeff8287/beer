@@ -15,7 +15,7 @@
 ### Slug 생성
 
 배치명/제목을 kebab-case로 변환:
-- `RAWL American Pale Ale` → `rawl-american-pale-ale`
+- `RAWR American Pale Ale` → `rawr-american-pale-ale`
 - `스파징 온도 실험` → `sparging-temperature-experiment`
 - 한글은 영문으로 번역하여 slug 생성
 
