@@ -72,7 +72,7 @@ process:
   boil_duration_min: 120
   preboil_volume_liters:
 collaborator_group: 맥아스터디
-card_photo_position: top
+card_photo_position: center 20%
 collaborators:
   - handle: seung_u_park
   - handle: yirnva.kwon
