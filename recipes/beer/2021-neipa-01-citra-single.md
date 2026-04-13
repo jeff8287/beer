@@ -40,40 +40,11 @@ source_label: Brewer's Friend 원본 레시피
 photos:
   - 2021-neipa-01-citra-single/20211209_202126.jpg
   - 2021-neipa-01-citra-single/20211201_002924.jpg
+show_body: true
 tags:
   - beer
   - neipa
   - ipa
 ---
 
-# DDH Citra Single NEIPA
-
-> 19L · Extract · 양조일 2021-11-17 · 병입일 2021-11-30
-
-Brewer's Friend의 [Citra Single NEIPA](https://www.brewersfriend.com/homebrew/recipe/view/1212890/citra-single-neipa) 레시피 참고. Extract 기반으로 변환.
-
-## Stats
-
-| OG | FG | ABV |
-|----|----|-----|
-| 1.051 | 1.010 | 5.4% |
-
-## Ingredients
-
-### Fermentables
-
-| 종류 | 무게 |
-|------|------|
-| Briess Golden Light DME (4°L) | 1.36 kg (3 lb) |
-| Wheat DME | 0.45 kg (1 lb) |
-
-### Hop
-
-Citra 중심 — 상세 스케줄은 원본 레시피 참고.
-
-## Brew Notes
-
-
-## Tasting Notes
-
-
+Brewer's Friend의 [Citra Single NEIPA](https://www.brewersfriend.com/homebrew/recipe/view/1212890/citra-single-neipa) 레시피를 참고해 Extract 기반으로 변환. 홉은 Citra 중심 — 상세 스케줄은 원본 레시피를 따랐다.

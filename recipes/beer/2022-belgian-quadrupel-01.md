@@ -42,47 +42,13 @@ photos:
   - 2022-belgian-quadrupel-01/20230115_121252.jpg
   - 2022-belgian-quadrupel-01/20230115_121325.jpg
   - 2022-belgian-quadrupel-01/20221217_184038.jpg
+show_body: true
 tags:
   - beer
   - belgian
   - quadrupel
 ---
 
-# Belgian Quadrupel 2022
+Extract + Steep 방식. 타겟 OG 1.100 / FG 1.016 / ABV 10.97%. 칠링 후 실제 배치 16 L, **실측 OG 1.088** (목표 대비 살짝 낮음).
 
-> 16L · Extract + Steep · 양조일 2022-12-17
-
-타겟 OG 1.100 / FG 1.016 / ABV 10.97% / SRM 50. 칠링 후 실제 배치 16L, **실측 OG 1.088**.
-
-## Stats
-
-| 목표 OG | 실측 OG | FG | ABV | SRM |
-|---------|---------|----|-----|-----|
-| 1.100 | 1.088 | 1.016 (target) | 10.97% (target) | 50 |
-
-## Ingredients
-
-### Fermentables
-
-| 종류 | 무게 | °L | 비율 |
-|------|------|----|----|
-| Briess LME Sparkling Amber Liquid | 1.5 kg | 10 | 31% |
-| Briess DME Pilsen Light | 1.0 kg | 2 | 20.7% |
-| Belgian Candi Sugar Dark | 1.63 kg (3.6 lb) | 275 | 33.8% |
-
-**Total**: 4.84 kg
-
-### Steeping Grains
-
-| 종류 | 무게 | °L |
-|------|------|----|
-| German Carafa III | 500 g | 535 |
-| German Melanoidin | 100 g | 25 |
-| American Carapils (Dextrine Malt) | 100 g | 1.8 |
-
-## Brew Notes
-
-
-## Tasting Notes
-
-
+발효성 곡물 비율: LME 31% / DME 20.7% / Belgian Candi Sugar Dark 33.8% — 총 4.84 kg. 색을 잡는 스피팅 그레인은 Carafa III 500 g, Melanoidin 100 g, Carapils 100 g.

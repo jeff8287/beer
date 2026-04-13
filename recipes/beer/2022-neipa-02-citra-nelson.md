@@ -55,37 +55,12 @@ photos:
   - 2022-neipa-02-citra-nelson/20220818_000118.jpg
   - 2022-neipa-02-citra-nelson/20220803_224347.jpg
   - 2022-neipa-02-citra-nelson/20220803_233347.jpg
+show_body: true
 tags:
   - beer
   - neipa
   - ipa
 ---
-
-# Citra Single NEIPA 2022
-
-> 15L · Extract + Steep · 양조일 2022-08-03
-
-## Ingredients
-
-### Fermentables
-
-| 종류 | 무게 |
-|------|------|
-| Pilsner DME | 2.9 kg |
-| Oats (귀리, flaked) | 450 g |
-| Wheat | 600 g |
-
-### Hop Schedule
-
-| 시점 | 홉 | 양 |
-|------|----|----|
-| Boil 20min | Citra | 10 g |
-| Whirlpool | Citra | 30 g |
-| Dry hop (4일차, 다시백) | Nelson Sauvin | 185 g |
-
-### Yeast
-
-Lallemand Verdant IPA
 
 ## Process
 
