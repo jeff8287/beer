@@ -73,14 +73,15 @@ process:
   preboil_volume_liters:
 collaborator_group: 맥아스터디
 card_photo_position: center 20%
+source_url: https://github.com/peterpan-brewing/brewing/blob/main/recipes/ImperialGingerbreadStout_1.md
+source_label: peterpan-brewing/brewing — ImperialGingerbreadStout_1.md
 collaborators:
   - handle: seung_u_park
   - handle: yirnva.kwon
   - handle: negroni.daiquiri
+    url: https://github.com/peterpan-brewing/brewing
   - handle: 남궁한
   - handle: geng_tai
-  - handle: peterpan-brewing
-    url: https://github.com/peterpan-brewing/brewing
 cost:
   total_krw:
   breakdown: []
@@ -93,7 +94,9 @@ tags:
 
 # Imperial Gingerbread Stout #1 — Silksong
 
-> 22.6L · All Grain · by [@peterpan-brewing](https://github.com/peterpan-brewing/brewing)
+> 22.6L · All Grain
+>
+> 📖 **원본 레시피:** [peterpan-brewing/brewing — ImperialGingerbreadStout_1.md](https://github.com/peterpan-brewing/brewing/blob/main/recipes/ImperialGingerbreadStout_1.md)
 
 > "Milk is for babies. Real men drink beer." — Arnold Schwarzenegger
 
@@ -166,4 +169,4 @@ Safale English Ale S-04 — 2팩 (ABV tolerance 11%)
 
 ## Brew Notes
 
-원본 레시피: [peterpan-brewing/brewing](https://github.com/peterpan-brewing/brewing/blob/main/recipes/ImperialGingerbreadStout_1.md)
+

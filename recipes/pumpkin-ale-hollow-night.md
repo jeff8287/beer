@@ -64,14 +64,15 @@ process:
   preboil_volume_liters: 26
 collaborator_group: 맥아스터디
 card_photo_position: center 75%
+source_url: https://github.com/peterpan-brewing/brewing/blob/main/recipes/PumpkinAle_1.md
+source_label: peterpan-brewing/brewing — PumpkinAle_1.md
 collaborators:
   - handle: seung_u_park
   - handle: yirnva.kwon
   - handle: negroni.daiquiri
+    url: https://github.com/peterpan-brewing/brewing
   - handle: 남궁한
   - handle: geng_tai
-  - handle: peterpan-brewing
-    url: https://github.com/peterpan-brewing/brewing
 cost:
   total_krw:
   breakdown: []
@@ -84,7 +85,9 @@ tags:
 
 # Pumpkin Ale #1 — Hollow Night
 
-> 20L · All Grain · by [@peterpan-brewing](https://github.com/peterpan-brewing/brewing)
+> 20L · All Grain
+>
+> 📖 **원본 레시피:** [peterpan-brewing/brewing — PumpkinAle_1.md](https://github.com/peterpan-brewing/brewing/blob/main/recipes/PumpkinAle_1.md)
 
 > "Without beer, life would be a mistake." — Friedrich Nietzsche
 
@@ -156,4 +159,4 @@ Safale English Ale S-04 — 1팩 (ABV tolerance 11%)
 
 ## Brew Notes
 
-원본 레시피: [peterpan-brewing/brewing](https://github.com/peterpan-brewing/brewing/blob/main/recipes/PumpkinAle_1.md)
+

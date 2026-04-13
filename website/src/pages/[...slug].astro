@@ -34,6 +34,12 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
         <span>{d.style}</span>
         <span>{d.batch_size_liters}L</span>
       </p>
+      {d.source_url && (
+        <p class="source-link">
+          📖 <strong>원본 레시피:</strong>{' '}
+          <a href={d.source_url} target="_blank">{d.source_label ?? d.source_url}</a>
+        </p>
+      )}
       {(d.collaborator_group || (d.collaborators && d.collaborators.length > 0)) && (
         <div class="collab-section">
           <span class="collab-badge">Collaborate w/{d.collaborator_group ? ` ${d.collaborator_group}` : ''}</span>
@@ -221,6 +227,15 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
   .badge[data-status="conditioning"] { background: #f39c12; }
   .badge[data-status="ready"] { background: #27ae60; }
   .badge[data-status="archived"] { background: #95a5a6; }
+  .source-link {
+    background: #fff8e7;
+    border-left: 4px solid #d4a574;
+    padding: 0.6rem 0.9rem;
+    margin: 0.75rem 0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .source-link a { font-weight: 600; }
   .collab-section {
     display: flex;
     align-items: center;

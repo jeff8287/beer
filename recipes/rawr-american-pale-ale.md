@@ -63,6 +63,7 @@ process:
   sparge_water_temp_celsius: 85
   boil_duration_min: 60
   preboil_volume_liters: 29
+collaborator_group: 공탕
 collaborators:
   - handle: __tirro
     url: https://yeunjunlee.notion.site/RAWR-Pale-Ale-33bf182b5644807abf29fcc9707acc09
