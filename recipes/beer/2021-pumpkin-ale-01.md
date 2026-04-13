@@ -1,8 +1,8 @@
 ---
 name: "Pumpkin Ale #01"
-style: "Pumpkin Ale"
+style: Pumpkin Ale
 batch_size_liters: 20
-brew_date: "2021-10-09"
+brew_date: 2021-10-09
 bottle_date: ""
 status: archived
 og:
@@ -44,14 +44,14 @@ fermentation:
   temp_celsius:
   duration_days:
 process:
-  mash_temp_celsius: null
-  mash_duration_min: null
-  strike_water_liters: null
-  strike_water_temp_celsius: null
-  sparge_water_liters: null
-  sparge_water_temp_celsius: null
+  mash_temp_celsius:
+  mash_duration_min:
+  strike_water_liters:
+  strike_water_temp_celsius:
+  sparge_water_liters:
+  sparge_water_temp_celsius:
   boil_duration_min: 60
-  preboil_volume_liters: null
+  preboil_volume_liters:
 cost:
   total_krw:
   breakdown: []
@@ -59,30 +59,10 @@ photos:
   - 2021-pumpkin-ale-01/20211009_203553.jpg
   - 2021-pumpkin-ale-01/20211009_180344.jpg
   - 2021-pumpkin-ale-01/20211009_182424.jpg
-  - 2021-pumpkin-ale-01/20211009_190258.jpg
-  - 2021-pumpkin-ale-01/20211009_190625.jpg
-  - 2021-pumpkin-ale-01/20211009_200807.jpg
   - 2021-pumpkin-ale-01/20211009_201320.jpg
-  - 2021-pumpkin-ale-01/20211009_201326.jpg
-  - 2021-pumpkin-ale-01/20211009_202319.jpg
-  - 2021-pumpkin-ale-01/20211009_202322.jpg
   - 2021-pumpkin-ale-01/20211009_203553.jpg
-  - 2021-pumpkin-ale-01/20211009_204554.jpg
-  - 2021-pumpkin-ale-01/20211009_223930.jpg
-  - 2021-pumpkin-ale-01/20211009_224124.jpg
   - 2021-pumpkin-ale-01/20211009_224450.jpg
-  - 2021-pumpkin-ale-01/20211009_230733.jpg
-  - 2021-pumpkin-ale-01/20211009_231331.jpg
   - 2021-pumpkin-ale-01/20211010_000746.jpg
-  - 2021-pumpkin-ale-01/20211010_001146.jpg
-  - 2021-pumpkin-ale-01/20211010_001956.jpg
-  - 2021-pumpkin-ale-01/20211010_014817.jpg
-  - 2021-pumpkin-ale-01/20211010_014819.jpg
-  - 2021-pumpkin-ale-01/20211010_015347.jpg
-  - 2021-pumpkin-ale-01/20211010_015358.jpg
-  - 2021-pumpkin-ale-01/20211010_015422.jpg
-  - 2021-pumpkin-ale-01/20211010_023040.jpg
-  - 2021-pumpkin-ale-01/20211010_023547.jpg
 tags:
   - beer
   - pumpkin-ale

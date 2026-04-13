@@ -1,9 +1,9 @@
 ---
 name: "Belgian Quadrupel #01"
-style: "Belgian Quadrupel"
+style: Belgian Quadrupel
 batch_size_liters: 16
-brew_date: "2022-12-17"
-bottle_date: "2023-01-15"
+brew_date: 2022-12-17
+bottle_date: 2023-01-15
 status: archived
 og: 1.088
 fg:
@@ -16,7 +16,7 @@ ingredients:
       weight_kg: 1.5
       lovibond: 10
     - name: Briess DME Pilsen Light
-      weight_kg: 1.0
+      weight_kg: 1
       lovibond: 2
     - name: Belgian Candi Sugar Dark
       weight_kg: 1.63
@@ -36,14 +36,11 @@ ingredients:
     amount: ""
   other: []
 fermentation:
-  temp_celsius: null
-  duration_days: null
+  temp_celsius:
+  duration_days:
 photos:
   - 2022-belgian-quadrupel-01/20230115_121252.jpg
   - 2022-belgian-quadrupel-01/20230115_121325.jpg
-  - 2022-belgian-quadrupel-01/20221217_203737.jpg
-  - 2022-belgian-quadrupel-01/20221217_175002.jpg
-  - 2022-belgian-quadrupel-01/20221217_183143.jpg
   - 2022-belgian-quadrupel-01/20221217_184038.jpg
 tags:
   - beer

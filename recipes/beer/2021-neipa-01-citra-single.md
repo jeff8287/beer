@@ -1,12 +1,12 @@
 ---
 name: "New England IPA #01 — DDH Citra Single"
-style: "New England IPA"
+style: New England IPA
 batch_size_liters: 19
-brew_date: "2021-11-17"
-bottle_date: "2021-11-30"
+brew_date: 2021-11-17
+bottle_date: 2021-11-30
 status: archived
 og: 1.051
-fg: 1.010
+fg: 1.01
 abv: 5.4
 ibu:
 srm:
@@ -24,31 +24,22 @@ ingredients:
     amount: ""
   other: []
 fermentation:
-  temp_celsius: null
-  duration_days: null
+  temp_celsius:
+  duration_days:
 process:
-  mash_temp_celsius: null
-  mash_duration_min: null
-  strike_water_liters: null
-  strike_water_temp_celsius: null
-  sparge_water_liters: null
-  sparge_water_temp_celsius: null
+  mash_temp_celsius:
+  mash_duration_min:
+  strike_water_liters:
+  strike_water_temp_celsius:
+  sparge_water_liters:
+  sparge_water_temp_celsius:
   boil_duration_min: 60
-  preboil_volume_liters: null
+  preboil_volume_liters:
 source_url: https://www.brewersfriend.com/homebrew/recipe/view/1212890/citra-single-neipa
 source_label: Brewer's Friend 원본 레시피
 photos:
   - 2021-neipa-01-citra-single/20211209_202126.jpg
   - 2021-neipa-01-citra-single/20211201_002924.jpg
-  - 2021-neipa-01-citra-single/20211117_222326.jpg
-  - 2021-neipa-01-citra-single/20211117_223750.jpg
-  - 2021-neipa-01-citra-single/20211117_223756.jpg
-  - 2021-neipa-01-citra-single/20211117_224745.jpg
-  - 2021-neipa-01-citra-single/20211117_233855.jpg
-  - 2021-neipa-01-citra-single/20211117_234912.jpg
-  - 2021-neipa-01-citra-single/20211201_002929.jpg
-  - 2021-neipa-01-citra-single/20211201_002945.jpg
-  - 2021-neipa-01-citra-single/20211201_003055.jpg
 tags:
   - beer
   - neipa
