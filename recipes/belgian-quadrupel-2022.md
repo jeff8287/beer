@@ -3,7 +3,7 @@ name: Belgian Quadrupel 2022
 style: Belgian Quadrupel
 batch_size_liters: 16
 brew_date: "2022-12-17"
-bottle_date: ""
+bottle_date: "2023-01-15"
 status: archived
 og: 1.088
 fg:
@@ -39,6 +39,8 @@ fermentation:
   temp_celsius: null
   duration_days: null
 photos:
+  - belgian-quadrupel-2022/20230115_121252.jpg
+  - belgian-quadrupel-2022/20230115_121325.jpg
   - belgian-quadrupel-2022/20221217_203737.jpg
   - belgian-quadrupel-2022/20221217_175002.jpg
   - belgian-quadrupel-2022/20221217_183143.jpg
