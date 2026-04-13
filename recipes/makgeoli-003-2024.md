@@ -1,0 +1,73 @@
+---
+name: "빚음 셋: 찹쌀 단양주"
+style: 전통주 / 단양주 (탁주)
+batch_size_liters: 3
+brew_date: "2024-04-27"
+bottle_date: ""
+status: archived
+og:
+fg:
+abv:
+ibu:
+srm:
+ingredients:
+  malts:
+    - name: 찹쌀
+      weight_kg: 1.0
+  hops: []
+  yeast:
+    name: 금정산성 누룩 + 와인 효모
+    amount: 누룩 200 g
+  other:
+    - name: 양조수 (수곡 + 혼합)
+      amount: 600 ml 수곡 + 800 ml 혼합 (총 1.4 L)
+fermentation:
+  temp_celsius: null
+  duration_days: null
+collaborators:
+  - handle: 1_ghost__
+photos:
+  - makgeoli-003-2024/20240427_094319.jpg
+  - makgeoli-003-2024/20240427_114110.jpg
+  - makgeoli-003-2024/20240504_153823.jpg
+  - makgeoli-003-2024/20240504_160154.jpg
+  - makgeoli-003-2024/20240504_161241.jpg
+  - makgeoli-003-2024/20240504_161912.jpg
+tags:
+  - makgeoli
+  - 전통주
+  - 단양주
+---
+
+# 빚음 셋: 찹쌀 단양주
+
+> 단양주 · 양조일 2024-04-27
+
+## Ingredients
+
+| 재료 | 양 |
+|------|----|
+| 찹쌀 | 1 kg (1125 ml) |
+| 금정산성 누룩 | 200 g |
+| 양조수 | 1.4 L (수곡 600 ml + 혼합 800 ml) |
+| 와인 효모 | — |
+
+## Process
+
+1. **쌀 불리기**: 찹쌀 8시간 불림
+2. **고두밥**: 전기밥솥, 물 양 = 쌀 부피 × 0.8 = **900 ml**
+   - 1차: 찹쌀 820 g + 물 278 ml *(→ 좀 질게 됨)*
+   - 2차: 찹쌀 600 g + 물 204 ml → 질게 된 걸 반영해 **160 ml로 조정**
+3. **수곡**: 금정산성 누룩 200 g + 물 600 ml, 9시간
+4. **혼합**: 고두밥 + 수곡 + **물 800 ml 추가** (총 양조수 1.4 L)
+   - → 다음엔 **추가 800 ml는 생략**해야 할 듯
+5. 와인 효모 투입
+
+## Brew Notes
+
+- 1차 고두밥이 질어서 2차는 물 204 ml → 160 ml로 줄임
+- 혼합 단계에서 물 800 ml 추가한 건 과했던 것 같음 — 다음 배치에선 생략 고려
+
+## Tasting Notes
+
+
