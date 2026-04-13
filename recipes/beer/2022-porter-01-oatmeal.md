@@ -1,6 +1,6 @@
 ---
-name: Oatmeal Porter 2022
-style: Oatmeal Porter
+name: "Oatmeal Porter #01"
+style: "Oatmeal Porter"
 batch_size_liters: 19
 brew_date: "2022-06-19"
 bottle_date: "2022-07-03"

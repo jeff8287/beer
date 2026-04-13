@@ -1,6 +1,6 @@
 ---
-name: "Pumpkin Ale #1 — Hollow Night"
-style: Pumpkin Ale
+name: "Pumpkin Ale #02 — Hollow Night"
+style: "Pumpkin Ale"
 batch_size_liters: 20
 brew_date: 2023-10-17
 bottle_date: 2023-10-31

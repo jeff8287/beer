@@ -1,6 +1,6 @@
 ---
-name: Citra Single NEIPA 2022
-style: New England IPA
+name: "New England IPA #02 — Citra + Nelson"
+style: "New England IPA"
 batch_size_liters: 15
 brew_date: "2022-08-03"
 bottle_date: ""
@@ -52,9 +52,9 @@ process:
   boil_duration_min: 30
   preboil_volume_liters: null
 photos:
-  - 2022-neipa-02-citra-single/20220818_000118.jpg
-  - 2022-neipa-02-citra-single/20220803_224347.jpg
-  - 2022-neipa-02-citra-single/20220803_233347.jpg
+  - 2022-neipa-02-citra-nelson/20220818_000118.jpg
+  - 2022-neipa-02-citra-nelson/20220803_224347.jpg
+  - 2022-neipa-02-citra-nelson/20220803_233347.jpg
 tags:
   - beer
   - neipa

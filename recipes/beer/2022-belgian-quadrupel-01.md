@@ -1,6 +1,6 @@
 ---
-name: Belgian Quadrupel 2022
-style: Belgian Quadrupel
+name: "Belgian Quadrupel #01"
+style: "Belgian Quadrupel"
 batch_size_liters: 16
 brew_date: "2022-12-17"
 bottle_date: "2023-01-15"

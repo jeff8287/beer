@@ -1,6 +1,6 @@
 ---
-name: Acacia Mead 2023
-style: Mead (Traditional, Acacia Honey)
+name: "Traditional Mead #01 — Acacia"
+style: "Traditional Mead"
 batch_size_liters: 3.5
 brew_date: "2023-01-31"
 bottle_date: "2023-02-06"

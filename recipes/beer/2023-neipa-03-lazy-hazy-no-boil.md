@@ -1,6 +1,6 @@
 ---
-name: "Lazy Hazy — No Boil NEIPA"
-style: New England IPA (No Boil)
+name: "New England IPA #03 — Lazy Hazy (No Boil)"
+style: "New England IPA"
 batch_size_liters: 12
 brew_date: "2023-04-22"
 bottle_date: "2023-05-01"

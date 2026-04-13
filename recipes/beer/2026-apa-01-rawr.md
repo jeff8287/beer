@@ -1,6 +1,6 @@
 ---
-name: RAWR American Pale Ale
-style: American Pale Ale
+name: "American Pale Ale #01 — RAWR"
+style: "American Pale Ale"
 batch_size_liters: 20
 brew_date: 2026-03-29
 bottle_date: 2026-04-12

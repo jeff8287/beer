@@ -1,6 +1,6 @@
 ---
-name: "빚음 하나: 수국 찹쌀 단양주"
-style: 전통주 / 단양주 (탁주·약주)
+name: "빚음 하나 — 수국 찹쌀 단양주"
+style: "단양주"
 batch_size_liters: 5
 brew_date: "2022-12-03"
 bottle_date: "2022-12-13"

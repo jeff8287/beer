@@ -1,6 +1,6 @@
 ---
-name: Pumpkin Ale 2021
-style: Pumpkin Ale
+name: "Pumpkin Ale #01"
+style: "Pumpkin Ale"
 batch_size_liters: 20
 brew_date: "2021-10-09"
 bottle_date: ""

@@ -1,6 +1,6 @@
 ---
-name: 붕어빵 Weizen
-style: Weizen (Red Bean)
+name: "Weizen #01 — 붕어빵"
+style: "Weizen"
 batch_size_liters: 20
 brew_date: "2021"
 bottle_date: ""

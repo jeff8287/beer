@@ -1,6 +1,6 @@
 ---
-name: "Imperial Gingerbread Stout #1 — Silksong"
-style: Imperial Stout
+name: "Imperial Stout #01 — Silksong (Gingerbread)"
+style: "Imperial Stout"
 batch_size_liters: 22.6
 brew_date: 2025-11-15
 bottle_date: 2025-12-05

@@ -1,6 +1,6 @@
 ---
-name: "빚음 둘: 찹쌀 단양주 (민트 ver.)"
-style: 전통주 / 단양주 (탁주)
+name: "빚음 둘 — 찹쌀 단양주 (민트)"
+style: "단양주"
 batch_size_liters: 3
 brew_date: "2024-02-24"
 bottle_date: ""

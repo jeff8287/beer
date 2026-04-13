@@ -1,6 +1,6 @@
 ---
-name: DDH Citra Single NEIPA
-style: New England IPA
+name: "New England IPA #01 — DDH Citra Single"
+style: "New England IPA"
 batch_size_liters: 19
 brew_date: "2021-11-17"
 bottle_date: "2021-11-30"
