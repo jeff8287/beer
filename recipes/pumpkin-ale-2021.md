@@ -2,8 +2,8 @@
 name: Pumpkin Ale 2021
 style: Pumpkin Ale
 batch_size_liters: 20
-brew_date: 2021-10-09
-bottle_date:
+brew_date: "2021-10-09"
+bottle_date: ""
 status: archived
 og:
 fg:
@@ -44,9 +44,14 @@ fermentation:
   temp_celsius:
   duration_days:
 process:
-  mash_temp_celsius:
-  mash_duration_min:
+  mash_temp_celsius: null
+  mash_duration_min: null
+  strike_water_liters: null
+  strike_water_temp_celsius: null
+  sparge_water_liters: null
+  sparge_water_temp_celsius: null
   boil_duration_min: 60
+  preboil_volume_liters: null
 cost:
   total_krw:
   breakdown: []
