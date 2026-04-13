@@ -62,6 +62,7 @@ const recipes = defineCollection({
     source_url: z.string().optional(),
     source_label: z.string().optional(),
     photos: z.array(z.string()).optional().default([]),
+    show_body: z.boolean().optional().default(false),
     tags: z.array(z.string()),
   }),
 });

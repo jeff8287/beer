@@ -1,9 +1,9 @@
 ---
 name: "Traditional Mead #01 — Acacia"
-style: "Traditional Mead"
+style: Traditional Mead
 batch_size_liters: 3.5
-brew_date: "2023-01-31"
-bottle_date: "2023-02-06"
+brew_date: 2023-01-31
+bottle_date: 2023-02-06
 status: archived
 og:
 fg:
@@ -22,14 +22,14 @@ ingredients:
     - name: 물
       amount: 2.5 L
 fermentation:
-  temp_celsius: null
+  temp_celsius:
   duration_days: 6
 photos:
   - 2023-traditional-01-acacia/20230202_001525.jpg
   - 2023-traditional-01-acacia/20230131_223726.jpg
   - 2023-traditional-01-acacia/20230131_224611.jpg
   - 2023-traditional-01-acacia/20230131_232738.jpg
-  - 2023-traditional-01-acacia/20230207_002011.jpg
+show_body: true
 tags:
   - mead
   - honey

@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { calcABV, calcIBU, calcSRM, srmToColor } from '../utils/calc';
 
@@ -14,6 +14,7 @@ export async function getStaticPaths() {
 const { recipe } = Astro.props;
 const d = recipe.data;
 const base = import.meta.env.BASE_URL;
+const { Content } = d.show_body ? await render(recipe) : { Content: null };
 
 const abv = d.abv ?? calcABV(d.og, d.fg);
 const ibu = d.ibu ?? calcIBU(d.ingredients.hops, d.og, d.batch_size_liters);
@@ -196,6 +197,12 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
         <p set:html={d.brew_notes.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')} />
       </section>
     )}
+
+    {Content && (
+      <section class="body">
+        <Content />
+      </section>
+    )}
   </article>
 </Base>
 
@@ -317,4 +324,15 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
   dl { display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1rem; }
   dt { font-weight: 600; color: #666; }
   .note { font-size: 0.8rem; color: #999; }
+  .body { border-top: 1px solid #e0d5c7; padding-top: 1rem; }
+  .body :global(h1) { font-size: 1.5rem; color: #8b4513; margin-top: 1.5rem; }
+  .body :global(h2) { font-size: 1.3rem; color: #8b4513; border-bottom: 1px solid #e0d5c7; padding-bottom: 0.3rem; margin: 1.5rem 0 0.75rem; }
+  .body :global(h3) { font-size: 1.05rem; color: #555; margin: 1rem 0 0.4rem; }
+  .body :global(blockquote) { border-left: 3px solid #d4a574; padding: 0.4rem 0.9rem; margin: 0.75rem 0; color: #666; background: #fffaf0; }
+  .body :global(table) { width: 100%; border-collapse: collapse; margin: 0.75rem 0; }
+  .body :global(th), .body :global(td) { padding: 0.4rem 0.75rem; border-bottom: 1px solid #eee; text-align: left; }
+  .body :global(th) { font-weight: 600; color: #666; font-size: 0.85rem; }
+  .body :global(ul), .body :global(ol) { padding-left: 1.5rem; margin: 0.5rem 0; }
+  .body :global(li) { margin: 0.25rem 0; }
+  .body :global(code) { background: #f4ecdf; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
 </style>

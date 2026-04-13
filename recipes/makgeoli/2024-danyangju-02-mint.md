@@ -1,8 +1,8 @@
 ---
-name: "빚음 둘 — 찹쌀 단양주 (민트)"
-style: "단양주"
+name: 빚음 둘 — 찹쌀 단양주 (민트)
+style: 단양주
 batch_size_liters: 3
-brew_date: "2024-02-24"
+brew_date: 2024-02-24
 bottle_date: ""
 status: archived
 og:
@@ -24,26 +24,15 @@ ingredients:
     - name: 민트 (1버전)
       amount: ""
 fermentation:
-  temp_celsius: null
-  duration_days: null
+  temp_celsius:
+  duration_days:
 collaborators:
   - handle: 1_ghost__
 photos:
-  - 2024-danyangju-02-mint/20240224_100017.jpg
-  - 2024-danyangju-02-mint/20240224_123436.jpg
-  - 2024-danyangju-02-mint/20240224_123443.jpg
-  - 2024-danyangju-02-mint/20240224_161458.jpg
   - 2024-danyangju-02-mint/20240224_162935.jpg
-  - 2024-danyangju-02-mint/20240224_162938.jpg
-  - 2024-danyangju-02-mint/20240225_225114.jpg
-  - 2024-danyangju-02-mint/20240303_205308.jpg
-  - 2024-danyangju-02-mint/20240303_205332.jpg
-  - 2024-danyangju-02-mint/20240303_210919.jpg
+  - 2024-danyangju-02-mint/20240224_123436.jpg
   - 2024-danyangju-02-mint/20240303_210949.jpg
-  - 2024-danyangju-02-mint/20240303_223531.jpg
-  - 2024-danyangju-02-mint/20240303_223535.jpg
-  - 2024-danyangju-02-mint/20240303_224215.jpg
-  - 2024-danyangju-02-mint/20240303_224222.jpg
+show_body: true
 tags:
   - makgeoli
   - 전통주

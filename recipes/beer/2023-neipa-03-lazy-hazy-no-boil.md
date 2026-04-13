@@ -1,9 +1,9 @@
 ---
 name: "New England IPA #03 — Lazy Hazy (No Boil)"
-style: "New England IPA"
+style: New England IPA
 batch_size_liters: 12
-brew_date: "2023-04-22"
-bottle_date: "2023-05-01"
+brew_date: 2023-04-22
+bottle_date: 2023-05-01
 status: archived
 og: 1.063
 fg: 1.016
@@ -13,7 +13,7 @@ srm:
 ingredients:
   malts:
     - name: Wheat DME
-      weight_kg: 2.0
+      weight_kg: 2
       lovibond: 3
   hops:
     - name: Galaxy
@@ -38,15 +38,11 @@ ingredients:
     - name: Calcium Chloride
       amount: 1 g
 fermentation:
-  temp_celsius: null
+  temp_celsius:
   duration_days: 9
 card_photo_position: right center
 photos:
   - 2023-neipa-03-lazy-hazy-no-boil/label.png
-  - 2023-neipa-03-lazy-hazy-no-boil/20230422_132158.jpg
-  - 2023-neipa-03-lazy-hazy-no-boil/20230422_133402.jpg
-  - 2023-neipa-03-lazy-hazy-no-boil/20230501_225559.jpg
-  - 2023-neipa-03-lazy-hazy-no-boil/20230503_213111.jpg
   - 2023-neipa-03-lazy-hazy-no-boil/20230503_213114.jpg
 tags:
   - beer

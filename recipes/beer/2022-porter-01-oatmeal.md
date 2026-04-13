@@ -1,9 +1,9 @@
 ---
 name: "Oatmeal Porter #01"
-style: "Oatmeal Porter"
+style: Oatmeal Porter
 batch_size_liters: 19
-brew_date: "2022-06-19"
-bottle_date: "2022-07-03"
+brew_date: 2022-06-19
+bottle_date: 2022-07-03
 status: archived
 og: 1.054
 fg: 1.021
@@ -25,25 +25,22 @@ ingredients:
     amount: ""
   other: []
 fermentation:
-  temp_celsius: null
-  duration_days: null
+  temp_celsius:
+  duration_days:
 process:
-  mash_temp_celsius: null
-  mash_duration_min: null
-  strike_water_liters: null
-  strike_water_temp_celsius: null
-  sparge_water_liters: null
-  sparge_water_temp_celsius: null
+  mash_temp_celsius:
+  mash_duration_min:
+  strike_water_liters:
+  strike_water_temp_celsius:
+  sparge_water_liters:
+  sparge_water_temp_celsius:
   boil_duration_min: 60
-  preboil_volume_liters: null
+  preboil_volume_liters:
 source_url: https://www.brewersfriend.com/homebrew/recipe/view/1228266/oatmeal-porter
 source_label: Brewer's Friend 원본 레시피
 photos:
   - 2022-porter-01-oatmeal/20220619_234302.jpg
-  - 2022-porter-01-oatmeal/20220619_222628.jpg
-  - 2022-porter-01-oatmeal/20220620_014751.jpg
   - 2022-porter-01-oatmeal/20220620_073241.jpg
-  - 2022-porter-01-oatmeal/20220704_001112.jpg
   - 2022-porter-01-oatmeal/20220704_004134.jpg
 tags:
   - beer

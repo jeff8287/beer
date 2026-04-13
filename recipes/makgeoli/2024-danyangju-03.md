@@ -1,8 +1,8 @@
 ---
-name: "빚음 셋 — 찹쌀 단양주"
-style: "단양주"
+name: 빚음 셋 — 찹쌀 단양주
+style: 단양주
 batch_size_liters: 3
-brew_date: "2024-04-27"
+brew_date: 2024-04-27
 bottle_date: ""
 status: archived
 og:
@@ -13,7 +13,7 @@ srm:
 ingredients:
   malts:
     - name: 찹쌀
-      weight_kg: 1.0
+      weight_kg: 1
   hops: []
   yeast:
     name: 금정산성 누룩 + 와인 효모
@@ -22,17 +22,14 @@ ingredients:
     - name: 양조수 (수곡 + 혼합)
       amount: 600 ml 수곡 + 800 ml 혼합 (총 1.4 L)
 fermentation:
-  temp_celsius: null
-  duration_days: null
+  temp_celsius:
+  duration_days:
 collaborators:
   - handle: 1_ghost__
 photos:
-  - 2024-danyangju-03/20240427_094319.jpg
   - 2024-danyangju-03/20240427_114110.jpg
-  - 2024-danyangju-03/20240504_153823.jpg
-  - 2024-danyangju-03/20240504_160154.jpg
-  - 2024-danyangju-03/20240504_161241.jpg
   - 2024-danyangju-03/20240504_161912.jpg
+show_body: true
 tags:
   - makgeoli
   - 전통주

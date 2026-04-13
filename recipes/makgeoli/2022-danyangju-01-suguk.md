@@ -1,9 +1,9 @@
 ---
-name: "빚음 하나 — 수국 찹쌀 단양주"
-style: "단양주"
+name: 빚음 하나 — 수국 찹쌀 단양주
+style: 단양주
 batch_size_liters: 5
-brew_date: "2022-12-03"
-bottle_date: "2022-12-13"
+brew_date: 2022-12-03
+bottle_date: 2022-12-13
 status: archived
 og:
 fg:
@@ -20,18 +20,15 @@ ingredients:
     amount: ""
   other: []
 fermentation:
-  temp_celsius: null
+  temp_celsius:
   duration_days: 10
 photos:
   - 2022-danyangju-01-suguk/20221213_222951.jpg
-  - 2022-danyangju-01-suguk/20221213_230332.jpg
   - 2022-danyangju-01-suguk/20221213_233410.jpg
-  - 2022-danyangju-01-suguk/20221213_233414.jpg
-  - 2022-danyangju-01-suguk/20221213_233419.jpg
-  - 2022-danyangju-01-suguk/20221213_233426.jpg
   - 2022-danyangju-01-suguk/20221213_233913.jpg
   - 2022-danyangju-01-suguk/20221213_233934.jpg
   - 2022-danyangju-01-suguk/20221213_235617.jpg
+show_body: true
 tags:
   - makgeoli
   - 전통주
