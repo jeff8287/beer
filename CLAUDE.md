@@ -8,16 +8,28 @@
 
 ### 분류 기준
 
-- **레시피**: 재료, 공정, 비중, 배치 크기 등 양조 기록이 포함된 경우 → `recipes/<slug>.md`
+- **레시피**: 재료, 공정, 비중, 배치 크기 등 양조 기록이 포함된 경우 → `recipes/<category>/<slug>.md`
 - **학습 노트**: 팁, 실험 결과, 배운 점 등 → `notes/<slug>.md`
 - 하나의 메모에 둘 다 포함되면 분리하여 각각 생성
 
+### 카테고리 (`recipes/` 하위 폴더)
+
+- `beer/` — 맥주 (IPA, Stout, Porter, APA, Weizen, Pumpkin Ale 등)
+- `makgeoli/` — 전통주 (막걸리, 단양주, 과실주 등)
+- `mead/` — 미드
+
 ### Slug 생성
 
-배치명/제목을 kebab-case로 변환:
-- `RAWR American Pale Ale` → `rawr-american-pale-ale`
-- `스파징 온도 실험` → `sparging-temperature-experiment`
-- 한글은 영문으로 번역하여 slug 생성
+패턴: `<brew_year>-<style>-<NN>[-<name>].md`
+- `<style>`: 소문자 kebab-case 스타일명 (e.g., `belgian-quadrupel`, `neipa`, `danyangju`, `pumpkin-ale`)
+- `<NN>`: 같은 스타일 내 2자리 순번 (01, 02, ...). 항상 붙인다(추후 같은 스타일을 또 만들 수 있기 때문)
+- `<name>`: 별칭이 있으면 번호 뒤에 붙인다. 없으면 생략
+
+예시:
+- "RAWR American Pale Ale" (2026) → `recipes/beer/2026-apa-01-rawr.md`
+- "Belgian Quadrupel 2022" → `recipes/beer/2022-belgian-quadrupel-01.md`
+- "빚음 둘: 찹쌀 단양주 민트" (2024) → `recipes/makgeoli/2024-danyangju-02-mint.md`
+- 별칭 없는 2번째 NEIPA (2022) → `recipes/beer/2022-neipa-02-citra-single.md`
 
 ### 레시피 템플릿 (`templates/recipe.md`)
 
@@ -63,8 +75,8 @@ frontmatter에 값이 비어 있으면 웹사이트에서 자동 계산됩니다
 
 ### 이미지 규칙
 
-- 사진은 `photos/<batch-slug>/` 폴더에 저장
-- **반드시 표준 마크다운 문법 사용**: `![설명](../photos/<batch-slug>/filename.jpg)`
+- 사진은 `photos/<batch-slug>/` 폴더에 저장 (batch-slug는 레시피 파일 basename과 동일, 카테고리 폴더 미포함)
+- **반드시 표준 마크다운 문법 사용**: `![설명](../../photos/<batch-slug>/filename.jpg)` (레시피가 `recipes/<category>/` 아래라 `../../`)
 - **Obsidian 위키링크 사용 금지**: `![[image]]` 형식은 웹사이트에서 렌더링되지 않음
 
 ### 변환 예시
@@ -79,12 +91,15 @@ us-05 효모 1팩
 og 1.062
 ```
 
-출력: `recipes/ipa-batch-2.md` (적절한 frontmatter + 본문)
+출력: `recipes/beer/2026-ipa-02.md` (적절한 frontmatter + 본문)
 
 ## 디렉토리 구조
 
 ```
 recipes/    # 배치별 레시피 (public, git tracked)
+  beer/       # 맥주
+  makgeoli/   # 전통주
+  mead/       # 미드
 notes/      # 학습 노트 (private, .gitignored)
 photos/     # 배치별 사진 (public)
 templates/  # 템플릿 파일
