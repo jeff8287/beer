@@ -56,6 +56,7 @@ cost:
   total_krw:
   breakdown: []
 photos:
+  - pumpkin-ale-2021/20211009_203553.jpg
   - pumpkin-ale-2021/20211009_180344.jpg
   - pumpkin-ale-2021/20211009_182424.jpg
   - pumpkin-ale-2021/20211009_190258.jpg
