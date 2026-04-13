@@ -89,7 +89,7 @@ gravity_readings:
     sg: 1.000
     note: 병입일
 tasting_notes: ""
-brew_notes: "재료 구매: [드림프 스마트스토어](https://smartstore.naver.com/dreamp/products/6224655843)"
+brew_notes: ""
 photos:
   - rawl-american-pale-ale/brew-day-01.png
   - rawl-american-pale-ale/brew-day-02.png
