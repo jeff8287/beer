@@ -14,10 +14,8 @@ ingredients:
   malts:
     - name: Wheat LME
       weight_kg: 1.5
-      lovibond: 4
     - name: Carapils
       weight_kg: 0.3
-      lovibond: 2
   hops:
     - name: Saphir
       weight_g: 0

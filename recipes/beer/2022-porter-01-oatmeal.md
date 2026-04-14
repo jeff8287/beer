@@ -16,7 +16,6 @@ ingredients:
       weight_kg: 0
     - name: Chocolate Malt
       weight_kg: 0
-      lovibond: 350
     - name: Chocolate Extract
       weight_kg: 0
   hops: []
