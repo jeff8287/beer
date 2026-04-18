@@ -154,23 +154,6 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
       </section>
     )}
 
-    {d.cost && d.cost.total_krw && (
-      <section class="cost">
-        <h2>Cost</h2>
-        <p><strong>Total:</strong> {d.cost.total_krw.toLocaleString()} KRW</p>
-        {d.cost.breakdown.length > 0 && (
-          <table>
-            <thead><tr><th>Item</th><th>Cost</th></tr></thead>
-            <tbody>
-              {d.cost.breakdown.map((b: { item: string; cost_krw: number }) => (
-                <tr><td>{b.item}</td><td>{b.cost_krw.toLocaleString()} KRW</td></tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </section>
-    )}
-
     {d.gravity_readings && d.gravity_readings.length > 0 && (
       <section>
         <h2>Gravity Readings</h2>
