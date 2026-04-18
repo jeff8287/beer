@@ -93,7 +93,7 @@ tasting_notes: ""
 brew_notes: ""
 photos:
   - 2026-apa-01-rawr/brew-day-01.jpg
-  - 2026-apa-01-rawr/brew-day-02.png
+  - 2026-apa-01-rawr/logo.jpeg
 tags:
   - beer
   - apa
@@ -103,8 +103,11 @@ tags:
 
 > 20L · All Grain · 양조일 2026-03-29 · 병입일 2026-04-12
 
+RAWR — an American Pale Ale brewed to pair with Gongtang, inspired by Dale's Pale Ale.
+One sip and grapefruit and pine rush in, followed by a gentle caramel sweetness that settles things down before a clean, dry finish — A pale ale that RAWRs right alongside the bowl. 🦖
+
 ![양조 모습](../../photos/2026-apa-01-rawr/brew-day-01.jpg)
-![재료](../../photos/2026-apa-01-rawr/brew-day-02.png)
+![RAWR 로고](../../photos/2026-apa-01-rawr/logo.jpeg)
 
 ## Stats
 
