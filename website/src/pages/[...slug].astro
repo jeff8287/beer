@@ -53,6 +53,12 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
       )}
     </header>
 
+    {Content && (
+      <section class="body">
+        <Content />
+      </section>
+    )}
+
     {d.photos && d.photos.length > 0 && (
       <section class="photos">
         {d.photos.map((photo: string) => (
@@ -195,12 +201,6 @@ const totalGrainKg = d.ingredients.malts.reduce((sum: number, m: { weight_kg: nu
       <section>
         <h2>Brew Notes</h2>
         <p set:html={d.brew_notes.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')} />
-      </section>
-    )}
-
-    {Content && (
-      <section class="body">
-        <Content />
       </section>
     )}
   </article>

@@ -96,7 +96,7 @@ gravity_readings:
     sg: 1.000
     note: 병입일
 tasting_notes: ""
-brew_notes: "병 구매: [드림프 스마트스토어](https://smartstore.naver.com/dreamp/products/6224655843)"
+brew_notes: ""
 photos:
   - 2026-apa-01-rawr/brew-day-01.jpg
   - 2026-apa-01-rawr/logo.jpeg
@@ -106,5 +106,5 @@ tags:
   - apa
 ---
 
-RAWR — an American Pale Ale brewed to pair with Gongtang, inspired by Dale's Pale Ale.
-One sip and grapefruit and pine rush in, followed by a gentle caramel sweetness that settles things down before a clean, dry finish — A pale ale that RAWRs right alongside the bowl. 🦖
+> RAWR — an American Pale Ale brewed to pair with Gongtang, inspired by Dale's Pale Ale.
+> One sip and grapefruit and pine rush in, followed by a gentle caramel sweetness that settles things down before a clean, dry finish — A pale ale that RAWRs right alongside the bowl. 🦖
