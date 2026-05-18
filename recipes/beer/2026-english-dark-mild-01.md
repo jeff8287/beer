@@ -2,7 +2,7 @@
 name: "English Dark Mild #01"
 style: "Dark Mild"
 batch_size_liters: 20.5
-brew_date: ""
+brew_date: 2026-05-23
 bottle_date: ""
 status: "planned"  # planned | fermenting | conditioning | ready | archived
 
