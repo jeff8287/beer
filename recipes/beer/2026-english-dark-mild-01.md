@@ -6,6 +6,7 @@ brew_date: 2026-05-23
 bottle_date: ""
 status: "planned"  # planned | fermenting | conditioning | ready | archived
 show_body: true
+body_position: bottom
 
 og: 1.038
 fg: 1.011
