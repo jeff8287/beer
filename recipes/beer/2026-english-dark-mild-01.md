@@ -1,16 +1,16 @@
 ---
 name: "English Dark Mild #01"
 style: "Dark Mild"
-batch_size_liters: 20
+batch_size_liters: 20.5
 brew_date: ""
 bottle_date: ""
 status: "planned"  # planned | fermenting | conditioning | ready | archived
 
-og: 1.037
+og: 1.038
 fg: 1.011
-abv: 3.4
-ibu: 18
-srm: 17
+abv: 3.5
+ibu: 21
+srm: 16
 
 fermentation:
   temp_celsius: 19
@@ -52,8 +52,8 @@ process:
   strike_water_temp_celsius: 75
   sparge_water_liters: 18
   sparge_water_temp_celsius: 80
-  boil_duration_min: 90
-  preboil_volume_liters: 28
+  boil_duration_min: 60
+  preboil_volume_liters: 26
 
 cost:
   total_krw: null
@@ -87,22 +87,23 @@ tags:
 
 - **홉 캐릭터**: 기본 EKG 단독. Fuggle로 바꾸거나 60분 EKG + 15분 Fuggle 가능 — [Fuggle 펠릿](https://seoulhomebrew.co.kr/product/fuggle-3-65-pellet-퍼글-홉/38/category/83/display/1/) (4,000원)
 - **효모**: 기본 S-04. 더 드라이·중립 원하면 Nottingham — [Lallemand Nottingham](https://seoulhomebrew.co.kr/product/lallemand-nottingham-yeast-dry-11-g-노팅엄-건조-효모/804/category/84/display/1/) (8,500원)
-- **몰트 깊이**: 기본 표준(SRM ~17). 진한 버전 = DRC 0.25kg + Chocolate 0.15kg로 증량 → SRM ~21, 토피·커피 강조
+- **몰트 깊이**: 기본 표준(SRM ~16). 진한 버전 = DRC 0.25kg + Chocolate 0.15kg로 증량 → SRM ~21, 토피·커피 강조
 - **청징**: 카라기난(보일) + 콜드 크래시 시 마트 식용 젤라틴 병행 가능 — [[gelatin-vs-carrageenan]]
 
 ## 레시피 요약
 
+- **배치**: 20.5 L (20 L에서 0.5 L 증량 → OG를 가이드라인 상한 1.038로 맞춤)
 - **곡물 (총 3.58 kg)**: Maris Otter 3.0 / Crystal T50 0.3 / DRC 0.18 / Chocolate 350L 0.1 (kg)
-- **홉**: EKG 28 g @ 60분 (AA 5% 기준 → 포장지 실측 AA로 양 보정, 목표 ~18 IBU)
+- **홉**: EKG 28 g @ 60분 (AA 5% 기준 → 포장지 실측 AA로 양 보정, ~21 IBU)
 - **효모**: S-04 1팩, 19 °C 발효
-- **계산값**: OG 1.037 / FG 1.011 / ABV 3.4% / IBU 18 / SRM 17 — 전부 BJCP Dark Mild 범위 내
+- **계산값 (Brewers Friend, 20.5 L)**: OG 1.038 / FG 1.011 / ABV 3.48% / IBU 21.2 / SRM 16.0 — 전부 BJCP Dark Mild 범위 내
 
 ## 공정
 
 1. **매싱**: 69 °C 75분 (스트라이크 워터 ~11 L @ 75 °C, 곡물비 ~3 L/kg). 저도수라 고온 매시로 덱스트린 남겨 바디 확보 — 8종 레시피 공통 전략.
 2. **매시아웃**: 76–78 °C
-3. **스파징**: 80 °C 워터 ~18 L. **80 °C 초과 금지**(탄닌 — 다크 몰트 민감). 프리보일 ~28 L 목표.
-4. **보일 90분**: DMS 제거 위해 75분+ 필수. 보일 15분 남기고 **카라기난** 투입.
+3. **스파징**: 80 °C 워터 ~18 L. **80 °C 초과 금지**(탄닌 — 다크 몰트 민감). 프리보일 ~26 L 목표.
+4. **보일 60분**: 베이스가 Maris Otter(영국식 완전 변성 페일 몰트)라 SMM 거의 없음 → DMS 걱정 없어 60분이면 충분. 분석 8종 중 명시된 7종이 거의 60분(90분은 1종뿐)으로 이 스타일 표준. 보일 15분 남기고 **카라기난** 투입.
 5. **칠링 → 발효**: 19 °C, ~10–14일 (효모 가라앉을 때까지 + 2일).
 6. **콜드 크래시**: 0–4 °C 1–2일. (선택) 에어락 구멍으로 식용 젤라틴 투입, 젓지 않음.
 7. **병입**: 프라이밍 설탕 ~6 g/L (영국식 저탄산, 1–2 vol). NEIPA 아니므로 8 g/L 기준에서 낮춤.
@@ -113,9 +114,9 @@ tags:
 
 **기본 설정**
 - Method: **All Grain**
-- Batch Size (into fermentor): **20 L**
-- Boil Time: **90 min**
-- Boil Size (pre-boil): **28 L**
+- Batch Size (into fermentor): **20.5 L**
+- Boil Time: **60 min**
+- Boil Size (pre-boil): **26 L**
 - Brewhouse Efficiency: **70 %**
 - Mash Thickness: **3 L/kg** (≈ 11 L 스트라이크)
 
@@ -146,10 +147,10 @@ tags:
 - 카라기난(Whirlfloc 류): Boil 15 min
 - Water: Trub/Chiller Loss, Fermenter Loss는 장비 기본값 유지
 
-**검산 목표값** (입력 후 이 값들 나오면 정상)
-- OG **1.037** / FG **1.011** / ABV **3.4 %** / IBU **18** (Tinseth) / SRM **17** (Morey)
+**검산 목표값** (20.5 L 기준, 입력 후 이 값들 나오면 정상)
+- OG **1.038** / FG **1.011** / ABV **3.48 %** / IBU **21.2** (Tinseth) / SRM **16.0** (Morey)
 
-> EKG 포장지 실측 AA가 5%와 다르면 AA만 바꾸고, IBU가 18 되도록 홉 g만 재조정.
+> EKG 포장지 실측 AA가 5%와 다르면 AA만 바꾸고 IBU 맞춰 홉 g 재조정. IBU 21은 스타일(10–25) 내지만 약간 홉 쪽 — 더 몰티하게 원하면 EKG 23 g로 줄이면 ~18 IBU.
 
 ## Tasting Notes
 
