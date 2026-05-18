@@ -11,7 +11,7 @@ body_position: bottom
 og: 1.038
 fg: 1.011
 abv: 3.5
-ibu: 21
+ibu: 24
 srm: 16
 
 fermentation:
@@ -38,6 +38,11 @@ ingredients:
       time_min: 60
       use: "boil"
       alpha_acid_pct: 5
+    - name: "Fuggle"
+      weight_g: 28
+      time_min: 20
+      use: "whirlpool"
+      alpha_acid_pct: 4.5
   yeast:
     name: "Fermentis Safale S-04 (dry English Ale)"
     amount: "1 pack (11.5 g)"
