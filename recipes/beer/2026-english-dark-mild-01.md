@@ -4,7 +4,7 @@ style: "Dark Mild"
 batch_size_liters: 20.5
 brew_date: 2026-05-23
 bottle_date: ""
-status: "planned"  # planned | fermenting | conditioning | ready | archived
+status: "ready"  # planned | fermenting | conditioning | ready | archived
 show_body: true
 body_position: bottom
 
@@ -66,7 +66,8 @@ cost:
   total_krw: null
   breakdown: []
 
-photos: []
+photos:
+  - 2026-english-dark-mild-01/english-dark-mild-01.jpg
 
 tags:
   - beer

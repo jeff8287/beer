@@ -4,7 +4,7 @@ style: American Pale Ale
 batch_size_liters: 20
 brew_date: 2026-03-29
 bottle_date: 2026-04-12
-status: ready
+status: archived
 og: 1.056
 fg: 1
 abv:
